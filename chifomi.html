@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="essai.css">
+    
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="connection.html">Connexion</a></li>
+                <li><a href="essai.html">Partie en ligne</a></li>
+                <li><a href="index.html">Calcul Mental</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Pierre-Feuille-Ciseaux</h1>
+            <div class="game-info">
+                <p>Score : Vous (<span id="playerScore">0</span>) - Ordinateur (<span id="computerScore">0</span>)</p>
+                <p id="gameResult"></p>
+            </div>
+            <div class="game-play">
+                <p>Choisissez votre main :</p>
+                <div class="choices">
+                    <button onclick="playRound('pierre')">
+                        <img src="pierre.png" alt="Pierre">
+                    </button>
+                    <button onclick="playRound('feuille')">
+                        <img src="feuille.png" alt="Feuille">
+                    </button>
+                    <button onclick="playRound('ciseaux')">
+                        <img src="ciseaux.png" alt="Ciseaux">
+                    </button>
+                </div>
+                <audio id="victory-manche" src="lettre_ok.mp3"></audio>
+                <audio id="loose-manche" src="lettre_absente.mp3"></audio>
+                <audio id="draw-manche" src="temps_ecoule.mp3"></audio>
+            </div>
+            <div class="game-results">
+                <p>Vous avez choisi : <span id="playerChoice"></span></p>
+                <p>L'ordinateur a choisi : <span id="computerChoice"></span></p>
+                <p id="result"></p>
+                <audio id="victory-sound" src="victory.mp3"></audio>
+                <audio id="loose-sound" src="loose.mp3"></audio>
+            </div>
+            <button onclick="newGame()" class="new-game-button">Nouvelle partie</button>
+        </div>
+    </main>
+    
+       
+</body>
+<script src="essai.js"></script>
+</html>
